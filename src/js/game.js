@@ -1,9 +1,11 @@
+import config from './config.js'
 
 export default class Game {
   constructor (action, draw) {
     this.aps = 0 // actualizaciones por segundo
     this.fps = 0
     this.bucle = 0
+    this.debug = config.game.debug || false
     this.actionCallback = action || false
     this.drawCallBack = draw || false
     this.loop()
@@ -16,7 +18,7 @@ export default class Game {
 
     if ((timeLap - this.bucle) > 999) {
       this.bucle = timeLap
-      console.log('aps:', this.aps, 'fps:', this.fps)
+      this.debug && console.log('aps:', this.aps, 'fps:', this.fps)
       this.aps = 0
       this.fps = 0
     }

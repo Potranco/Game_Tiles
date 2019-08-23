@@ -1,6 +1,6 @@
 
 let Rectagle = (x, y, width, height, parent) => {
-  let id = 'r' + x + y
+  let id = x + 'r' + y
   let div = '<div id="' + id + '"></div>'
   let color = '#' + Math.floor(Math.random() * 16777215).toString(16)
   parent.innerHTML = parent.innerHTML + div

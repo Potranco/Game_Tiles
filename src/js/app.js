@@ -1,6 +1,9 @@
+import config from './config.js'
 import Game from './game.js'
 import Resolution from './resolution.js'
 import rectagle from './rectagle.js'
+import keyboard from './controls/keyboard.js'
+import gamepad from './controls/gamepad.js'
 
 export default class App {
   constructor (canvas) {
@@ -15,7 +18,7 @@ export default class App {
       this.ctx.drawImage(this.player.img, 30, 30)
     }
     */
-    this.game = new Game()
+    this.game = new Game(false, false)
     this.resolution = new Resolution()
     window.addEventListener('resize', this.loadTiles.bind(this))
     this.loadTiles()
