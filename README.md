@@ -1,11 +1,6 @@
 ```
-Game Tiles
+Commandos de consola
 
-Comandos:
-  - npm run build
-  - npm run dev
-
-Siempre en evolución ;)
 
 
 ```
