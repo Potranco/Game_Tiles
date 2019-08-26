@@ -18,8 +18,7 @@ class Keyboard {
   }
 
   lastKeyPress () {
-    let key = this.lastKey
-    return key
+    return this.lastKey
   }
 }
 

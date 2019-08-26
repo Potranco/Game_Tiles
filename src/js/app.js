@@ -2,8 +2,9 @@ import config from './config.js'
 import Game from './game.js'
 import Resolution from './resolution.js'
 import rectagle from './rectagle.js'
-import keyboard from './controls/keyboard.js'
-import gamepad from './controls/gamepad.js'
+// import keyboard from './controls/keyboard.js'
+// import gamepad from './controls/gamepad.js'
+import fetch from 'isomorphic-fetch'
 
 export default class App {
   constructor (canvas) {
@@ -37,6 +38,15 @@ export default class App {
         rectagle(x * tilesSize, y * tilesSize, tilesSize, tilesSize, node)
       }
     }
+    let header = {
+      method: 'GET'
+    }
+    const url = config.tildes.urls[0]
+    fetch(url, header)
+      .then((response) => response.ok && response.json())
+      .then((data) => {
+        console.log('response', data)
+      })
   }
 
   clear () {
